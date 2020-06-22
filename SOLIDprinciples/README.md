@@ -67,11 +67,47 @@ class Calculator {
 >   * You need to add more operations such as divide or multiply    
 >   * and more ...     
 
-Thus, the above class does not follow Single Responsibility Principle because it has already 5 reasons to change. 
+* Thus, the above class does not follow Single Responsibility Principle because it has already 5 reasons to change. 
 
-A SRP compliant class looks as below:
+* A SRP compliant class looks as below:
 
+```Java
+class Calculator{
+    public CalculationResult computeBinaryOperation(
+            Number one,
+            Number two,
+            OperationType operationType.
+            ) {
+        return operationType.operate(one, two);
+    }
 
+    public CalculationResult computeUnaryOperation (
+            Number one,
+            OperationType operationType){
+        return operationType.operate(one);
+    }
+    }
+}
+```
+>   * Calculator class acts as an interace for clients where they can supply input and the operation they want to execute.   
+
+>   * The above class is not doing any number validation, type checking or performing addition, subtraction etc.. It has only one reason to change which is handling delegation for a class of expression.        
+
+>   * i.e. This class changes only when you want to add a new kind of expression evaluation.
+
+>   * Even If you add a ternary expression evaluation, the responsibility remains same as this won't increase the number of reasons for the class to change.   
+
+* How to decide If a class is SRP Compliant :  
+* It is not, if you observe the following in your class
+>   * really Large classes and realy large methods
+>   * If method has too many parameters
+>   * Writing Unit test for a class or method is very difficult. 
+
+* What to do to make it compliant :   
+
+>   * Your ability to name classes in a beautiful way ( requires nice vocabulary). 
+>   * Your ability to group similar kind of behaviour together. 
+>   * Try solving the above mentioned problems.   
 
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
