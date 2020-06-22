@@ -1,4 +1,6 @@
 # SOLID PRINCIPLES
+References: 
+1. [CJ's youtube channel](https://www.youtube.com/channel/UCUS5-hVsSPXuWPEHRvnXXEg)
 
 ### Introduction  ( [source](https://www.youtube.com/watch?v=7wd-p20Fkbs) )
 > Problems in Existing Software Development Process ( or What happens if we don't align our code with respect to these principles ) :   
@@ -20,6 +22,55 @@
 * L - Liskov Substitution Principle
 * I - Interface Segragation Principle
 * D - Dependency Inversion Principle
+
+
+### Single Responsibility Principle |  The S in SOLID Principles ( [source](https://www.youtube.com/watch?v=Y4L28C84CeA&t=27s) )
+* Definition: A class should have only one responsibility. 
+* Responsibility: It's defined as a reason to change. 
+* Single Responsibility is the most powerful principle. To understand it well, you would need to know what are the reasons for which a class can change or how to find the number of reasons in a class due to which it can change. 
+* Change : alteration in behaviour with respect to class, and the methods represent the behaviour of the class. This doesn't mean that the number of methods in a class is equal to number of reasons for which the class can change. 
+* A change can be big, small and breaking change. 
+
+> Example: A Web Calculations Engine     
+>   * takes two numbers and perform add, subtract, mutiply and divide 
+> This is version 1 and you want to add new features (support for decimal numbers) . Will the new feature break the old ones or work perfectly fine ?
+
+```Java
+class Calculator {
+  
+  public AdditionResult add ( Number one, Number two ) {
+    if (one.isIteger() && two.isInteger()){
+    // add logic
+    }
+    else if (one.isDecimal() && two.isDecimal()){
+    // add logic
+    }
+    else if (one.isBigInteger() && two.isBigInteger()){
+    // add logic
+    }
+    else{
+    // add logic
+    }
+  }
+
+  public SubtractResult subtract (Number one, Number two ){
+    return (SubtractResult) this.add(one, two.negate()) ;
+  }
+ 
+}
+```
+
+>The above class will require chaneges when    
+>   * You need to change to add method.   
+>   * You need to change the subtract method    
+>   * You need to add new kind of addition such as Complex Numbers    
+>   * You need to add more operations such as divide or multiply    
+>   * and more ...     
+
+Thus, the above class does not follow Single Responsibility Principle because it has already 5 reasons to change. 
+
+A SRP compliant class looks as below:
+
 
 
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
