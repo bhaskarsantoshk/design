@@ -109,6 +109,32 @@ class Calculator{
 >   * Your ability to group similar kind of behaviour together. 
 >   * Try solving the above mentioned problems.   
 
+* Common responsibilities of a Class :
+>   * An action taker
+>   * A delegator (kind of a proxy)
+>   * An orchestrator
+
+* What it doesn't depend on ? Number of methods in your class doesn't really tell number of reasons to change.   
+For example:
+
+```Java
+// the class has SRP violation due to two responsibilities 
+class FileUploader {
+    public void uploadFile (File file, String url){}
+    public void downloadFile (String url){}
+}
+```
+
+```Java
+// Just a name change for the class 
+// and the methods under one responsibility group
+class FileNetworkIOGateway {
+    public void uploadFile (File file, String url){}
+    public void downloadFile (String url){}
+}
+```
+
+
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
 > Inditcations showing LSP violation:     
