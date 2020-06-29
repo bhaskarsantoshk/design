@@ -16,6 +16,7 @@ References:
 * Needless Complexity
 * Code is difficult to understand
 
+
 ### The Solid Principles    
 * S - Single Responsibility Principle
 * O - Open Closed Principle
@@ -36,6 +37,7 @@ References:
 > This is version 1 and you want to add new features (support for decimal numbers) . Will the new feature break the old ones or work perfectly fine ?
 
 ```Java
+
 class Calculator {
   
   public AdditionResult add ( Number one, Number two ) {
@@ -137,5 +139,5 @@ class FileNetworkIOGateway {
 
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
-> Inditcations showing LSP violation:     
-* A derives class that does less than it's badse class is not substitutable for that base class, and therefore violates LSP.
+* Inditcations showing LSP violation:     
+> A derives class that does less than it's badse class is not substitutable for that base class, and therefore violates LSP.
