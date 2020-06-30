@@ -141,3 +141,34 @@ class FileNetworkIOGateway {
 * Definition: Subtypes must be substitutable with their base types    
 * Inditcations showing LSP violation:     
 > A derives class that does less than it's badse class is not substitutable for that base class, and therefore violates LSP.
+
+### Interface Segregation Principle | The I in the SOLID Principles ( [source](https://www.youtube.com/watch?v=fywebw8sjJc) )
+* Definition: Client should not be forced to depend on the method they do not use.. 
+
+* Ever faced this scenario while coding?
+```Java
+interface LivingThing{
+  void breathe();
+  void walk();
+}
+
+
+class Human implements Livingthing{
+  void breathe(){
+    System.out.println("Human breathes");
+  }
+  void walk(){
+  System.out.println("Human walks");
+  }
+}
+
+class Tree implements LivingThing{
+void breathe(){
+    System.out.println("Tree breathes");
+  }
+  
+  // ISP violation 
+  void walk(){
+    // Intentionally left blank as Trees can't walk
+  }
+}
