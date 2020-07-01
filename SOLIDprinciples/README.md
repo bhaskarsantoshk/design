@@ -172,10 +172,12 @@ void breathe(){
     // Intentionally left blank as Trees can't walk
   }
 }
-
+```
 
 ### Dependency Inversion Principle | The D in the SOLID Principle ( [source](https://www.youtube.com/watch?v=uEB_y01JMh4) )
 
 * Definition:   
-> High level modules should not depend on low level modules, both should depend on abstractions
-> Abstractions should not depend on details, Details should depend on abstraction. 
+    > High level modules should not depend on low level modules, both should depend on abstractions
+    > Abstractions should not depend on details, Details should depend on abstraction. 
+* In Software engineering, we usually split the application architecture in terms of layers. Example: The UI Layer, The Controller Layer or The DAO layer and so on. 
+
