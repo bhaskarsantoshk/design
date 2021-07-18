@@ -62,7 +62,7 @@ class Calculator {
 }
 ```
 
->The above class will require chaneges when    
+>The above class will require changes when    
 >   * You need to change to add method.   
 >   * You need to change the subtract method    
 >   * You need to add new kind of addition such as Complex Numbers    
@@ -111,9 +111,33 @@ class Calculator{
 >   * Your ability to group similar kind of behaviour together. 
 >   * Try solving the above mentioned problems.   
 
+```Java
+package SOLIDprinciples.SingleResponsibility.good_design;
+
+public class MyResponsibleClass {
+    private DependencyOne dependencyOne;
+    private DependencyTwo dependencyTwo;
+    private DependencyThree dependencyThree;
+
+    public void myResponsibleMethod (Argument argument){
+        ResultOne resultFromFirstDependency =
+                dependencyOne.callingItsResponsibleMethodFor(argument);
+        ResultTwo resultFromSecondDependency =
+                dependencyTwo.callingItsResponsibleMethodFor(resultFromFirstDependency);
+        ResultThree resultFromThirdDependency =
+                dependencyThree.callingItsResponsibleMethodFor(resultFromSecondDependency);
+        System.out.println(resultFromThirdDependency);
+    }
+}
+```
+
+>   * This class is SRP compliant, don't confuse number of responsibilities with number of dependencies the class have to compute it's result
+>   * This class has a single responsibility i.e responsibility to orchestrate.
+>   * Again. don't add too many orchestrations that make a class God class. Keep your class size in check
+
 * Common responsibilities of a Class :
 >   * An action taker
->   * A delegator (kind of a proxy)
+>   * A delegator (kind of a proxy to another class)
 >   * An orchestrator
 
 * What it doesn't depend on ? Number of methods in your class doesn't really tell number of reasons to change.   
@@ -135,6 +159,11 @@ class FileNetworkIOGateway {
     public void downloadFile (String url){}
 }
 ```
+
+Advantages of SRP:
+
+* Pluggable architecture
+* Class is less fragile, less coupled, easily tested and debugged. 
 
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
