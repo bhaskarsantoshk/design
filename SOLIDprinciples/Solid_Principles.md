@@ -165,6 +165,26 @@ Advantages of SRP:
 * Pluggable architecture
 * Class is less fragile, less coupled, easily tested and debugged. 
 
+### Open Closed Principle | The O in the SOLID Principles ( [source](https://www.youtube.com/watch?v=hRD8VX9AQck&list=PLn05u4nMKcB9yMCSCPzHiw-8rmVL4oFy_&index=3) )
+* Definition: A class should be open for extension and closed for modification
+* What does Open for extension mean ?
+    * As required change, a module could be extended to satisfy those changes.
+    * This means you model your features in such a way which requires you define a clear contract and you stick to it.
+    * This requires a lot of thought before implementation. Once the contract is clear, this is exposed by interface or an abstract class and not the concrete implementation. 
+    * It allows you to provide a different implementation for the interface- which allows you to dynamically change functionality at runtime.
+     
+* What does Closed for modification mean ?
+    *  Any existing code should not be modified.
+    * Concrete class need not be modified, you can simply add a new  class. 
+    * Only in scenarios where you want to add a similar kind of feature
+    * Scenarios where you need to add more methods - you're breaking all the contracts that you made initially - but if all the methods are with existing codebase,
+    this will not be a problem. 
+    * Problem arises when you update your contract, but the classes you've implemented before is outside the code base.
+    * Java has a feature to add new methods to interface and still keep older classes from breaking . This is done by providing default methods to the interafce.
+    * This makes Interface to be backward compatible.
+    * As long as you're not breaking the existing contract - Open Closed principle is not violated.
+     
+
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
 * Inditcations showing LSP violation:     
