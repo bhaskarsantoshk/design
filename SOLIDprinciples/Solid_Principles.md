@@ -7,7 +7,7 @@ References:
 * Software starts to rot
 * Things go wrong
 * As time goes by, it becomes difficult to maintain the software
-* Eventually, it takes enarmous efforts to add small changes to the software
+* Eventually, it takes enormous efforts to add small changes to the software
 
 > Design smells that start to degrade the quality of code written over time:    
 * Rigidity : System is hard to change, because every change forces many other changes to other parts of the system.
@@ -21,7 +21,7 @@ References:
 * S - Single Responsibility Principle
 * O - Open Closed Principle
 * L - Liskov Substitution Principle
-* I - Interface Segragation Principle
+* I - Interface Segregation Principle
 * D - Dependency Inversion Principle
 
 
@@ -78,7 +78,7 @@ class Calculator{
     public CalculationResult computeBinaryOperation(
             Number one,
             Number two,
-            OperationType operationType.
+            OperationType operationType
             ) {
         return operationType.operate(one, two);
     }
@@ -87,7 +87,6 @@ class Calculator{
             Number one,
             OperationType operationType){
         return operationType.operate(one);
-    }
     }
 }
 ```
