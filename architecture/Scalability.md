@@ -17,3 +17,24 @@
 * Horizontal scaling: adding more hardware to existing hardware pools. It's also called scaling out.there is no limit on how much we can scale horizontally. 
 * Horizontal scaling also allows us to scale dynamically when the traffic increases. dynamic scaling is not possible with vertical scaling.
 * Cloud elasticity: The process of adding and removing the servers, stretching and returning to the original infrastructual capacitancy on the fly. https://www.educative.io/courses/cloud-computing-101-master-the-fundamentals
+
+#### Which scalability is right for our app
+
+	* Pros of Vertical Scaling: 
+		* doesn't require any code change / complex system configurations. 
+		* takes less administrative/monitoring/management efforts than managing a distributes system.
+	* Cons of VS:
+		* Avaialability Risk
+
+	#### Why does the code need to change in when the app has to run on multiple machines ?
+
+		* If you intend to run the code in distrubted env, it need to be stateless. 
+		* Means, there should be no static instances in the class, static instances hold application data, when the server is down, all the static data/state is lost. The app is left in an inconsistent state.
+		* In object-oriented programming, the instance variables hold object state in them. Static variables moreover hold state that spans across multiple objects. They generally hold state per classloader. Now, if the server instance running that classloader goes down, all the data is lost.
+		* Also, whatever data static variables hold, it’s not application-wide. For this reason, distributed memory like Redis, Memcache, etc., are used to maintain a consistent state application-wide. When writing applications for distributed systems, it’s a good practice to avoid using static instances in the class. The state is typically persisted in a distributed memory store; this facilitates components to be stateless.	
+		* This is why functional programming got popular with distributed systems. The functions don’t retain any state. However, the same behavior can also be achieved with prominent OOP languages.
+	* If the app has minimum predictable traffic ( internal tool and not mission critical ) - single server could possibly be enough
+	* If your app is a public-facing social app like a social network, a fitness app, an online game, or something similar, where the traffic is unpredictable. Both high availability and horizontal scalability are important to you.
+
+
+
