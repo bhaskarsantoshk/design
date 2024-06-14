@@ -72,3 +72,8 @@ These are some techniques/components involved in designing a robust system:
 | **Use Cases**                | Web servers, distributed databases     | Single large databases, legacy systems  |
 
 
+### Fault tolerance vs Fault resilience
+* Fault tolerance: User does not see any impact except for some delay during which failover occurs.
+* Fault resilience: Failure is observed in some non critical services. But main components of the system continues to function normally. Overall, you can still use the system. e.g. if netflix recommendation engine or rating or comments services fail, you can still search and see movies.
+
+
