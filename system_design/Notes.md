@@ -86,9 +86,9 @@ These are some techniques/components involved in designing a robust system:
 
 **Key Point**: Main services remain functional even if non-critical services fail. For example, if Netflix's recommendation or comments services fail, users can still search for and watch movies.
 
-# Monolith vs. Microservices
+## Monolith vs. Microservices
 
-## Monolith
+### Monolith
 
 **Definition**: A monolithic architecture is a single, unified codebase where all functionalities and components are interconnected and interdependent.
 
@@ -100,7 +100,13 @@ These are some techniques/components involved in designing a robust system:
 - **Maintenance**: Difficult to maintain and update; changes in one part can affect the entire system.
 - **Examples**: Traditional web applications, early-stage startups.
 
-## Microservices
+**When to Choose Monolith**:
+- **Simplicity**: When the application is simple and has a limited scope.
+- **Early Stage**: For startups or early-stage projects where speed of development is crucial.
+- **Team Size**: When the development team is small and can easily manage a single codebase.
+- **Rapid Development**: When you need to quickly build and deploy a prototype or MVP (Minimum Viable Product).
+
+### Microservices
 
 **Definition**: A microservices architecture divides the application into small, independent services, each responsible for a specific functionality.
 
@@ -112,7 +118,14 @@ These are some techniques/components involved in designing a robust system:
 - **Maintenance**: Easier to maintain and update; changes in one service do not affect others.
 - **Examples**: Large-scale applications like Netflix, Amazon.
 
-## Comparison
+**When to Choose Microservices**:
+- **Complexity**: When the application is complex and has multiple distinct functionalities.
+- **Scalability**: When you need fine-grained control over scaling different parts of the application.
+- **Team Structure**: When you have a large development team that can work on different services independently.
+- **Continuous Deployment**: When you require frequent updates and deployments without affecting the whole system.
+- **Fault Isolation**: When you need to ensure that failures in one service do not impact the entire system.
+
+### Comparison
 
 | Aspect            | Monolith                                | Microservices                             |
 |-------------------|-----------------------------------------|-------------------------------------------|
@@ -122,6 +135,8 @@ These are some techniques/components involved in designing a robust system:
 | **Development**   | Easier to start, complex over time      | Allows parallel development               |
 | **Maintenance**   | Difficult, changes can affect whole app | Easier, isolated changes                  |
 | **Examples**      | Traditional web apps, early startups    | Large-scale apps like Netflix, Amazon     |
+| **When to Choose**| Simple, early-stage projects, small teams| Complex, large-scale projects, large teams|
+
 
 
 
