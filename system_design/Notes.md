@@ -23,3 +23,38 @@ These are some techniques/components involved in designing a robust system:
 9. **Logging and Metrics**: Collecting and analyzing data about system performance and behavior to monitor health, diagnose issues, and improve performance.
 
 10. **Extensibility**: Designing systems to easily incorporate new features and adapt to changing requirements without significant rework.
+
+# Horizontal vs. Vertical Scaling
+
+## Horizontal Scaling
+
+**Definition**: Horizontal scaling, also known as scaling out, involves adding more servers to a system to distribute the load.
+
+**Key Characteristics**:
+- **Capacity Increase**: Increases capacity by adding more machines to the system.
+- **Fault Tolerance**: Improves fault tolerance by distributing the load across multiple servers. If one server fails, others can take over.
+- **Cost**: Can be cost-effective as commodity hardware can be used.
+- **Complexity**: Often increases system complexity due to the need for load balancing and data distribution mechanisms.
+- **Examples**: Adding more web servers behind a load balancer, distributing databases across multiple nodes.
+
+## Vertical Scaling
+
+**Definition**: Vertical scaling, also known as scaling up, involves adding more resources (CPU, RAM, storage) to an existing server.
+
+**Key Characteristics**:
+- **Capacity Increase**: Increases capacity by enhancing the power of a single machine.
+- **Fault Tolerance**: Limited improvement in fault tolerance since the failure of the single, more powerful machine can lead to downtime.
+- **Cost**: Can be expensive as it often requires high-end, specialized hardware.
+- **Complexity**: Simpler to implement as it doesn't require changes to the application architecture.
+- **Examples**: Upgrading a server's CPU, adding more memory to a database server.
+
+## Comparison
+
+| Aspect               | Horizontal Scaling                    | Vertical Scaling                        |
+|----------------------|----------------------------------------|-----------------------------------------|
+| **Capacity Increase**| By adding more machines                | By enhancing the power of existing machines |
+| **Fault Tolerance**  | Higher due to distribution             | Lower, as it relies on a single machine |
+| **Cost**             | Potentially lower with commodity hardware | Higher due to the need for specialized hardware |
+| **Complexity**       | Higher, requires load balancing        | Lower, simpler implementation           |
+| **Use Cases**        | Web servers, distributed databases     | Single large databases, legacy systems  |
+
