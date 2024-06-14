@@ -86,5 +86,42 @@ These are some techniques/components involved in designing a robust system:
 
 **Key Point**: Main services remain functional even if non-critical services fail. For example, if Netflix's recommendation or comments services fail, users can still search for and watch movies.
 
+# Monolith vs. Microservices
+
+## Monolith
+
+**Definition**: A monolithic architecture is a single, unified codebase where all functionalities and components are interconnected and interdependent.
+
+**Key Characteristics**:
+- **Single Codebase**: All components and services are part of a single application.
+- **Deployment**: Deployed as a single unit.
+- **Scalability**: Scaling requires scaling the entire application, not individual components.
+- **Development**: Easier to develop initially but can become complex as the application grows.
+- **Maintenance**: Difficult to maintain and update; changes in one part can affect the entire system.
+- **Examples**: Traditional web applications, early-stage startups.
+
+## Microservices
+
+**Definition**: A microservices architecture divides the application into small, independent services, each responsible for a specific functionality.
+
+**Key Characteristics**:
+- **Independent Services**: Each service is developed, deployed, and scaled independently.
+- **Deployment**: Each service can be deployed separately.
+- **Scalability**: Individual services can be scaled independently based on demand.
+- **Development**: Facilitates continuous deployment and allows different teams to work on different services simultaneously.
+- **Maintenance**: Easier to maintain and update; changes in one service do not affect others.
+- **Examples**: Large-scale applications like Netflix, Amazon.
+
+## Comparison
+
+| Aspect            | Monolith                                | Microservices                             |
+|-------------------|-----------------------------------------|-------------------------------------------|
+| **Codebase**      | Single unified codebase                 | Multiple independent services             |
+| **Deployment**    | Deployed as a single unit               | Services deployed separately              |
+| **Scalability**   | Entire application scaled together      | Individual services scaled independently  |
+| **Development**   | Easier to start, complex over time      | Allows parallel development               |
+| **Maintenance**   | Difficult, changes can affect whole app | Easier, isolated changes                  |
+| **Examples**      | Traditional web apps, early startups    | Large-scale apps like Netflix, Amazon     |
+
 
 
