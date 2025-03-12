@@ -186,8 +186,8 @@ Advantages of SRP:
 
 ### Liskov Substitution Principle | The L in the SOLID Principles ( [source](https://www.youtube.com/watch?v=4pt_l5U3PP0) )
 * Definition: Subtypes must be substitutable with their base types    
-* Inditcations showing LSP violation:     
-> A derives class that does less than it's badse class is not substitutable for that base class, and therefore violates LSP.
+* Indications showing LSP violation:     
+> A derives class that does less than it's base class is not substitutable for that base class, and therefore violates LSP.
 
 ### Interface Segregation Principle | The I in the SOLID Principles ( [source](https://www.youtube.com/watch?v=fywebw8sjJc) )
 * Definition: Client should not be forced to depend on the method they do not use.. 
