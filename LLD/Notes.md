@@ -1,5 +1,9 @@
-# Theory
-* Understanding of basics of Object Oriented Design and principles
-* Knowledge of Deisgn Patterns
-* SOLID principles
+# LLD
+Code needs to focus on
+* Readability
+* Extensibility
+* Correctness
+
+
+
 
