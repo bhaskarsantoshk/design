@@ -125,3 +125,205 @@ Employee employee1 = new Employee();
 - When no reference points to an object, it's eligible for garbage collection
 
 ---
+
+## Attributes and Methods
+
+- **Attributes** – variables that store object data
+- **Methods** – functions that define object behavior or business logic
+
+### Example:
+```java
+class BankAccount {
+    private String name;
+    private double balance; // private = access specifier
+
+    // Constructor
+    public BankAccount(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    // Default Constructor
+    public BankAccount() {
+    }
+
+    // Setter (write access)
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter (read access)
+    public String getName() {
+        return this.name;
+    }
+
+    // Getter only (no setter for security)
+    public double getBalance() {
+        return this.balance;
+    }
+
+    // Add balance
+    public void addBalance(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        } else {
+            System.out.println("Amount is negative");
+        }
+    }
+
+    // Withdraw
+    public boolean canWithdraw(double amount) {
+        if (amount < balance) {
+            balance -= amount;
+            return true;
+        }
+        System.out.println("Balance too low");
+        return false;
+    }
+}
+```
+
+### Notes:
+- Sensitive data is **kept private**
+- Public **getters and setters** are exposed
+- This is called **Encapsulation** – hiding internal data
+
+---
+
+# Constructors in Java
+
+## What is a Constructor?
+- A **constructor** is a special method that has the **same name as the class**
+- It is used to **create and initialize objects**
+- Java provides a **default constructor** if no constructor is explicitly defined
+
+### Key Features:
+- Has **no return type** (not even `void`)
+- Has the **same name as the class**
+- Can be **overloaded**
+- Java automatically provides a **default constructor** if none is specified
+
+---
+
+## Purpose of Constructors
+- Create objects
+- Set default or initial values
+- Reuse initialization logic
+
+---
+
+## Types of Constructors
+
+### 1. Non-Parameterized Constructor (Default Constructor)
+```java
+class Account {
+    String name;
+    double balance;
+
+    // Default constructor
+    public Account() {
+        name = "Unknown";
+        balance = 0.0;
+    }
+}
+```
+
+---
+
+### 2. Parameterized Constructor
+```java
+class Account {
+    String name;
+    double balance;
+
+    public Account(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+}
+
+// Usage
+Account obj1 = new Account("John", 1000.00);
+System.out.println(obj1.getName());    // John
+System.out.println(obj1.getBalance()); // 1000.00
+
+Account obj2 = new Account();
+System.out.println(obj2.getName());    // null
+System.out.println(obj2.getBalance()); // 0.0
+```
+
+---
+
+### Constructor Overloading
+```java
+class Account {
+    String name;
+    double balance;
+
+    public Account() {
+        this.name = "Default";
+        this.balance = 0.0;
+    }
+
+    public Account(String name) {
+        this.name = name;
+        this.balance = 0.0;
+    }
+
+    public Account(double balance) {
+        this.name = "Unknown";
+        this.balance = balance;
+    }
+
+    public Account(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+}
+```
+
+---
+
+### 3. Copy Constructor
+```java
+class Account {
+    String name;
+    double balance;
+
+    public Account(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    // Copy Constructor
+    public Account(Account account) {
+        this(account.getName(), account.getBalance());
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+}
+
+// Usage
+Account obj1 = new Account("Jane", 1500.00);
+Account obj2 = new Account(obj1);
+```
+
+---
+
+## Notes
+- A constructor can **call another constructor** using `this(...)`
+- Constructors allow **initializing objects in multiple ways**
