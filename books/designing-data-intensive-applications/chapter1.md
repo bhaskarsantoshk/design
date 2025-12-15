@@ -239,3 +239,12 @@ Date: December 8, 2025
 * When generating load artficially in order to test scalability of a system, the load generating client needs to keep sending requests 
 
 ---
+Date: December 15, 2025
+
+* When generating load artficially in order to test scalability of a system, the load generating client needs to keep sending requests independently of the response time. If the client waits for the prevous request to complete before sending the next one, that behaviour has the effect of artificially keeping the queue shorter in the test than they would in reality, which skew the measurements.
+### Percentiles in Practice
+* It just takes one slow call to make the entire end-user request slow ( even if all calls called in parallel )
+* Even if a small amount of backend calls are slow, the chance of getting a slow call increases if an enduser request requires multiple backend calls, and so a higher proportion of end-user requests end up being slow. known as tail latency amplification
+
+
+
